@@ -1,14 +1,14 @@
-/* Reset */
+/* Reset & base */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f0f4ff, #e0f2f1);
-  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(145deg, #e0e7ff, #f0fdfa);
+  color: #111827;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,104 +16,104 @@ body {
   padding: 60px 20px;
 }
 
-/* Container */
+/* Main container */
 .App {
   width: 100%;
-  max-width: 650px;
-  background-color: #ffffffcc;
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 45px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
-  border: 1px solid #e5e7eb;
 }
 
-/* Title */
+/* Heading */
 .App h1 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: #111827;
+  font-size: 36px;
+  font-weight: 900;
   text-align: center;
+  margin-bottom: 35px;
+  color: #1e293b;
 }
 
-/* Form */
+/* Form input and button */
 form {
   display: flex;
-  gap: 12px;
-  margin-bottom: 35px;
+  gap: 14px;
+  margin-bottom: 40px;
 }
 
 input[type="text"] {
   flex: 1;
-  padding: 14px 16px;
+  padding: 16px 18px;
   font-size: 16px;
-  border: 2px solid #e5e7eb;
-  border-radius: 10px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-color: rgba(243, 244, 246, 0.9);
   outline: none;
-  transition: 0.2s ease;
-  background-color: #f9fafb;
+  transition: all 0.25s ease;
 }
 
 input[type="text"]:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
 /* Add button */
 button[type="submit"] {
-  padding: 14px 22px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
   color: white;
-  font-weight: 600;
+  padding: 16px 22px;
   font-size: 15px;
+  font-weight: 600;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
 }
 
 button[type="submit"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.4);
 }
 
-/* Task List */
+/* Task list */
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  background: linear-gradient(to right, #fdfdfd, #f0f4f8);
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  background: linear-gradient(125deg, #ffffffee, #f9fafb);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
   padding: 16px 20px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 li:hover {
-  background-color: #f3f4f6;
-  transform: scale(1.015);
+  transform: translateY(-2px) scale(1.01);
+  background: linear-gradient(125deg, #f1f5f9, #ffffff);
 }
 
 li span {
   flex-grow: 1;
-  cursor: pointer;
   font-size: 16px;
-  text-align: left;
-  transition: color 0.2s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 li span:hover {
-  color: #3b82f6;
+  color: #6366f1;
 }
 
 li span.completed {
@@ -126,20 +126,21 @@ li button {
   background: linear-gradient(to right, #ef4444, #f87171);
   color: white;
   border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: 500;
   font-size: 14px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 14px rgba(239, 68, 68, 0.3);
 }
 
 li button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 0 10px 22px rgba(239, 68, 68, 0.4);
 }
 
-/* Empty message */
+/* Empty state */
 ul p {
   text-align: center;
   font-size: 16px;
